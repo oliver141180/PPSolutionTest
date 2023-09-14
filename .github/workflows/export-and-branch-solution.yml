@@ -73,6 +73,16 @@ jobs:
       run: |
         mv ${{ github.event.inputs.solution_exported_folder}}/${{ github.event.inputs.solution_name }}.zip ${{ github.event.inputs.solution_folder}}/${{ github.event.inputs.solution_name }}.zip
 
+    - shell: cmd
+      run: |
+        echo commit all changes
+        git config user.email “aali2@westminster.gov.uk”
+        git config user.name "aali2@westminster.gov.uk"
+        git checkout -B main
+        git add --all
+        git commit -m "code commit"
+        git push --set-upstream origin main
+
     - name: branch-solution, prepare it for a PullRequest
       uses: microsoft/powerplatform-actions/branch-solution@v0
       with:
