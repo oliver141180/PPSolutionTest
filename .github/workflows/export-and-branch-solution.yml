@@ -69,6 +69,12 @@ jobs:
         solution-type: 'Unmanaged'
         overwrite-files: true
 
+    - name: copy file
+      uses: canastro/copy-file-action@master
+      with:
+        source: ${{ github.event.inputs.solution_exported_folder}}/${{ github.event.inputs.solution_name }}.zip
+        target: ${{ github.event.inputs.solution_folder}}/${{ github.event.inputs.solution_name }}.zip
+
     - name: branch-solution, prepare it for a PullRequest
       uses: microsoft/powerplatform-actions/branch-solution@v0
       with:
