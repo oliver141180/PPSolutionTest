@@ -23,6 +23,10 @@ on:
        description: 'folder name to be created and checked in *do not change*'
        required: true
        default: solutions/
+      last_devops_version_number: 
+       description: 'the version number of the last instance of the solution that was managed in devops'
+       required: true
+       default: 15
 env:
 #edit your values here
   ENVIRONMENT_URL: 'https://oacdev.crm4.dynamics.com'
@@ -55,4 +59,4 @@ jobs:
       run: >
         pac solution online-version
         -sn ${{ github.event.inputs.solution_name }}
-        -sv 1.0.0.${{github.run_number}}
+        -sv 1.0.0.(${{ github.event.inputs.last_devops_version_number}} + ${{github.run_number}})
