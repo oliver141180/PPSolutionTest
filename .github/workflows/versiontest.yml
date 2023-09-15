@@ -53,6 +53,6 @@ jobs:
 
     - shell: cmd
       run: >
-        pac auth online-version
+        pac solution online-version
         -sn ${{ github.event.inputs.solution_name }}
         -sv 1.0.0.2
