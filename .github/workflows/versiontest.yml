@@ -46,8 +46,6 @@ jobs:
         offset: 15
       run: |
         echo ::set-env name=GITHUB_RUN_NUMBER_WITH_OFFSET::$(($build_number+$offset))
-    - run: echo 
-
 
     - shell: cmd
       run: |
