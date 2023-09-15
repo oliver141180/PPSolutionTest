@@ -45,12 +45,7 @@ jobs:
 
     - shell: cmd
       run: |
-        pac auth create \
-          --url ${{env.ENVIRONMENT_URL}} \
-          --name ${{ github.event.inputs.solution_name }} \
-          --applicationId ${{env.CLIENT_ID}} \
-          --clientSecret ${{ secrets.PowerPlatformSPN }} \ 
-          --tenant ${{env.TENANT_ID}}
+        pac auth create --url ${{env.ENVIRONMENT_URL}} --name ${{ github.event.inputs.solution_name }} --applicationId ${{env.CLIENT_ID}} --clientSecret ${{ secrets.PowerPlatformSPN }} --tenant ${{env.TENANT_ID}}
 
     - shell: cmd
       run: |
