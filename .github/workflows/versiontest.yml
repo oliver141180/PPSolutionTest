@@ -52,7 +52,7 @@ jobs:
         pac auth select --index 1
 
     - shell: cmd
-      run: |
-        pac auth online-version \
-          -sn ${{ github.event.inputs.solution_name }} \
-          -sv 1.0.0.2
+      run: >
+        pac auth online-version
+        -sn ${{ github.event.inputs.solution_name }}
+        -sv 1.0.0.2
