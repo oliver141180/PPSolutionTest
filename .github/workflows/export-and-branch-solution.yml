@@ -78,7 +78,6 @@ jobs:
 
     - name: Commit changes
       run: |
-        
         cp ${{ github.event.inputs.solution_exported_folder}}/${{ github.event.inputs.solution_name }}.zip ./${{ github.event.inputs.solution_target_folder}}/${{ github.event.inputs.solution_name }}.zip
         git config --global user.email "no-reply@github.com"
         git config --global user.name "GitHub Actions"
