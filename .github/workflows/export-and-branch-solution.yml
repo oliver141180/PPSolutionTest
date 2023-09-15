@@ -57,11 +57,11 @@ jobs:
 
     - shell: cmd
       run: |
-        pac auth create 
-          --url ${{env.ENVIRONMENT_URL}} 
-          --name ${{ github.event.inputs.solution_name }}
-          --applicationId ${{env.CLIENT_ID}}
-          --clientSecret ${{ secrets.PowerPlatformSPN }} 
+        pac auth create \
+          --url ${{env.ENVIRONMENT_URL}} \
+          --name ${{ github.event.inputs.solution_name }} \
+          --applicationId ${{env.CLIENT_ID}} \
+          --clientSecret ${{ secrets.PowerPlatformSPN }} \ 
           --tenant ${{env.TENANT_ID}}
 
     
@@ -71,8 +71,8 @@ jobs:
 
     - shell: cmd
       run: |
-        pac auth online-version
-          -sn ${{ github.event.inputs.solution_name }}
+        pac auth online-version \
+          -sn ${{ github.event.inputs.solution_name }} \
           -sv 1.0.0.2
 
     - name: export-solution action
