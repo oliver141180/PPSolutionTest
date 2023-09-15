@@ -33,7 +33,7 @@ permissions:
   contents: write
 jobs:
   export-from-dev:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     # or you can say runs-on: ubuntu-latest
     env:
       RUNNER_DEBUG: 1
@@ -48,19 +48,16 @@ jobs:
         echo ::set-env name=GITHUB_RUN_NUMBER_WITH_OFFSET::$(($NUM+200))
     - run: echo $GITHUB_RUN_NUMBER_WITH_OFFSET
 
-    - shell: cmd
-      run: |
-        dotnet tool install --global Microsoft.PowerApps.CLI.Tool
+    - run: |
+        pac install latest
 
-    - shell: cmd
-      run: |
+    - run: |
         pac auth create --url ${{env.ENVIRONMENT_URL}} --name ${{ github.event.inputs.solution_name }} --applicationId ${{env.CLIENT_ID}} --clientSecret ${{ secrets.PowerPlatformSPN }} --tenant ${{env.TENANT_ID}}
 
-    - shell: cmd
-      run: |
+    - run: |
         pac auth select --index 1
 
-    - shell: cmd
+    - name: update solution version
       env:
         build_number: ${{ github.run_number }}
         offset: 15
