@@ -47,6 +47,8 @@ jobs:
       run: |
         echo ::set-env name=GITHUB_RUN_NUMBER_WITH_OFFSET::$(($build_number+$offset))
 
+    - run: echo $GITHUB_RUN_NUMBER_WITH_OFFSET
+
     - shell: cmd
       run: |
         dotnet tool install --global Microsoft.PowerApps.CLI.Tool
@@ -60,6 +62,9 @@ jobs:
         pac auth select --index 1
 
     - shell: cmd
+      env:
+        build_number: ${{ github.run_number }}
+        offset: 15
       run: >
         pac solution online-version
         -sn ${{ github.event.inputs.solution_name }}
