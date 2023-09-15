@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AppModuleSiteMap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SiteMapUniqueName>oac_ProfessionalPCF</SiteMapUniqueName>
+  <EnableCollapsibleGroups>False</EnableCollapsibleGroups>
+  <ShowHome>True</ShowHome>
+  <ShowPinned>True</ShowPinned>
+  <ShowRecents>True</ShowRecents>
+  <SiteMap IntroducedVersion="7.0.0.0">
+    <Area Id="NewArea_1a3fd9d7" ResourceId="SitemapDesigner.NewTitle" DescriptionResourceId="SitemapDesigner.NewTitle" ShowGroups="true" IntroducedVersion="7.0.0.0">
+      <Titles>
+        <Title LCID="1033" Title="Area1" />
+      </Titles>
+      <Group Id="NewGroup_2e099155" ResourceId="SitemapDesigner.NewGroup" DescriptionResourceId="SitemapDesigner.NewGroup" IntroducedVersion="7.0.0.0" IsProfile="false" ToolTipResourseId="SitemapDesigner.Unknown">
+        <Titles>
+          <Title LCID="1033" Title="Group1" />
+        </Titles>
+        <SubArea Id="NewSubarea_fddbf29f" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="oac_pcftesterentity" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA">
+          <Titles>
+            <Title LCID="1033" Title="PC Tester Entity" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="subarea_0cdab7be" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="dkdt_crossdomainmessaging" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA" />
+      </Group>
+    </Area>
+  </SiteMap>
+  <LocalizedNames>
+    <LocalizedName description="Professional PCF" languagecode="1033" />
+  </LocalizedNames>
+</AppModuleSiteMap>

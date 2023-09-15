@@ -1,0 +1,308 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{4e8052e7-cee0-4256-b137-f52a0157d476}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls">
+      <tabs>
+        <tab verticallayout="true" id="{03266731-947b-4547-bef5-38a6c7a42e3c}" IsUserDefined="1">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{603fa5e0-84e8-4648-8cef-4b0a54a5a961}">
+                  <labels>
+                    <label description="General" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{4b18b29f-a148-4b19-9428-4568174ade10}">
+                        <labels>
+                          <label description="Name" languagecode="1033" />
+                        </labels>
+                        <control id="oac_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="oac_name" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{dee597b8-c2c4-41b9-8d0a-6755cf796a19}" locklevel="0" showlabel="true">
+                        <labels>
+                          <label description="Text Field" languagecode="1033" />
+                        </labels>
+                        <control id="oac_textfield" classid="{F9A8A302-114E-466A-B582-6771B2AE0D92}" datafieldname="oac_textfield" disabled="false" uniqueid="{940ae80a-6a02-e693-9cc0-271a6c249303}" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{85db0b96-e298-6279-2118-e5c029460b09}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Text Field" languagecode="1033" />
+                        </labels>
+                        <control id="oac_textfield" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="oac_textfield" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{67118bbc-8fdc-4b9b-b3b9-771d7bac7e1c}" locklevel="0">
+                        <labels>
+                          <label description="Decimal Field" languagecode="1033" />
+                        </labels>
+                        <control id="oac_decimalfield" classid="{C3EFE0C3-0EC6-42BE-8349-CBD9079DFD8E}" datafieldname="oac_decimalfield" disabled="false" uniqueid="{4ce6a565-c329-aa86-85ab-c0a352c0712e}" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{9dd6a91f-5a66-4c2c-9030-c7d8f3979243}" locklevel="0">
+                        <labels>
+                          <label description="Integer Field" languagecode="1033" />
+                        </labels>
+                        <control id="oac_integerfield" classid="{C6D124CA-7EDA-4A60-AEA9-7FB8D318B68F}" datafieldname="oac_integerfield" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{758a9d6e-6a04-4590-ba64-fa92a123a22e}" locklevel="0" showlabel="true">
+                        <labels>
+                          <label description="OptionSet Field" languagecode="1033" />
+                        </labels>
+                        <control id="oac_optionsetfield" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="oac_optionsetfield" disabled="false" uniqueid="{81058112-81b2-51b4-b41c-e33d5c86c351}" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{c6f584ae-3deb-418f-94cb-989fa1bb38e4}" locklevel="0">
+                        <labels>
+                          <label description="DateAndTime Field" languagecode="1033" />
+                        </labels>
+                        <control id="oac_dateandtimefield" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="oac_dateandtimefield" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{d7b6c0dd-58a7-460e-849c-c603b64c32a6}" locklevel="0">
+                        <labels>
+                          <label description="Lookup Field" languagecode="1033" />
+                        </labels>
+                        <control id="oac_lookupfield" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="oac_lookupfield" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{fdcdaf09-1d83-4a3d-9ac3-3b65a3da4270}">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="tab_2" id="{68bd8352-ddcc-b666-4a8d-2509bda5d11d}" IsUserDefined="0" locklevel="0" showlabel="true">
+          <labels>
+            <label description="Tab" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="tab_2_section_1" showlabel="false" showbar="false" locklevel="0" id="{c4ed4cd6-8067-de8d-692b-c5c67ee84a71}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="Section" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{0bd0ed68-8c28-aa61-4b84-31d4b8cd31d2}" showlabel="true" locklevel="0" visible="false">
+                        <labels>
+                          <label description="Text Field" languagecode="1033" />
+                        </labels>
+                        <control id="oac_textfield" classid="{F9A8A302-114E-466A-B582-6771B2AE0D92}" datafieldname="oac_textfield" disabled="false" uniqueid="{eabb9a94-8579-465b-2329-a910cb696182}" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="tab_3" id="{3c7a3b7a-d4d6-5550-d58a-8d0600bd6824}" IsUserDefined="0" locklevel="0" showlabel="true">
+          <labels>
+            <label description="Tab" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="tab_3_section_1" showlabel="false" showbar="false" locklevel="0" id="{b18d0d9e-9a0c-4e1e-c346-738773211c8b}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="Section" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{bc14d361-3e25-ac24-c7d8-93cc3142e8c8}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Long Text Field" languagecode="1033" />
+                        </labels>
+                        <control id="oac_longtextfield" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="oac_longtextfield" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{d2253903-1b55-d023-c623-7d89dab7b7eb}" showlabel="true" locklevel="0" visible="false">
+                        <labels>
+                          <label description="Long Text Field" languagecode="1033" />
+                        </labels>
+                        <control id="oac_longtextfield" classid="{F9A8A302-114E-466A-B582-6771B2AE0D92}" datafieldname="oac_longtextfield" disabled="false" uniqueid="{c0ce8c69-0652-3e88-674d-d9043e689d64}" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{33758fa6-e172-4aba-86cd-48b368eed545}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{ca3446b3-3356-4d40-81e4-0c3581019dcc}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{50cf75a6-7238-4af1-843b-031baa796a6e}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{ba07b9cc-f8cb-448f-a380-896f8795034b}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{17169370-6286-47f9-b267-5dd8a7981aa3}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{1759f2a0-0fd7-41cc-94e9-435a722d3aa9}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{8ad16053-a69f-42a8-b2fa-334a8e8b8700}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{bd238ca0-4c4f-48bd-af63-90b209dbe25b}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <Navigation>
+        <NavBar></NavBar>
+        <NavBarAreas>
+          <NavBarArea Id="Info">
+            <Titles>
+              <Title LCID="1033" Text="Common" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Sales">
+            <Titles>
+              <Title LCID="1033" Text="Sales" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Service">
+            <Titles>
+              <Title LCID="1033" Text="Service" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Marketing">
+            <Titles>
+              <Title LCID="1033" Text="Marketing" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="ProcessCenter">
+            <Titles>
+              <Title LCID="1033" Text="Process Sessions" />
+            </Titles>
+          </NavBarArea>
+        </NavBarAreas>
+      </Navigation>
+      <controlDescriptions>
+        <controlDescription forControl="{940ae80a-6a02-e693-9cc0-271a6c249303}">
+          <customControl id="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" formFactor="0">
+            <parameters>
+              <datafieldname>oac_textfield</datafieldname>
+            </parameters>
+          </customControl>
+          <customControl id="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" formFactor="1">
+            <parameters>
+              <datafieldname>oac_textfield</datafieldname>
+            </parameters>
+          </customControl>
+          <customControl formFactor="2" name="oac_propcf.pcffield">
+            <parameters>
+              <textField>oac_textfield</textField>
+              <inputField static="true" type="SingleLine.Text">Foo</inputField>
+              <textField2>oac_name</textField2>
+              <numberField>oac_decimalfield</numberField>
+              <dateField>oac_dateandtimefield</dateField>
+              <optionSetField>oac_optionsetfield</optionSetField>
+              <msinternal.isvisibleinmocaonly static="true">true</msinternal.isvisibleinmocaonly>
+            </parameters>
+          </customControl>
+        </controlDescription>
+        <controlDescription forControl="{eabb9a94-8579-465b-2329-a910cb696182}">
+          <customControl id="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" formFactor="0">
+            <parameters>
+              <datafieldname>oac_textfield</datafieldname>
+            </parameters>
+          </customControl>
+          <customControl id="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" formFactor="1">
+            <parameters>
+              <datafieldname>oac_textfield</datafieldname>
+            </parameters>
+          </customControl>
+          <customControl formFactor="2" name="MscrmControls.WorkHourControl.WorkHourControl">
+            <parameters>
+              <CalendarId>oac_textfield</CalendarId>
+              <msinternal.isvisibleinmocaonly static="true">true</msinternal.isvisibleinmocaonly>
+            </parameters>
+          </customControl>
+        </controlDescription>
+        <controlDescription forControl="{c0ce8c69-0652-3e88-674d-d9043e689d64}">
+          <customControl id="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" formFactor="0">
+            <parameters>
+              <datafieldname>oac_longtextfield</datafieldname>
+            </parameters>
+          </customControl>
+          <customControl id="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" formFactor="1">
+            <parameters>
+              <datafieldname>oac_longtextfield</datafieldname>
+            </parameters>
+          </customControl>
+          <customControl formFactor="2" name="MscrmControls.WorkHourControl.WorkHourForm">
+            <parameters>
+              <workHourFormInput>oac_longtextfield</workHourFormInput>
+              <workHourFormOutput>oac_longtextfield</workHourFormOutput>
+              <msinternal.isvisibleinmocaonly static="true">true</msinternal.isvisibleinmocaonly>
+            </parameters>
+          </customControl>
+        </controlDescription>
+      </controlDescriptions>
+      <DisplayConditions Order="0" FallbackForm="true">
+        <Everyone />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Information" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

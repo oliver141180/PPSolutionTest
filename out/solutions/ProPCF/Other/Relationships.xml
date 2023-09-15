@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityRelationships xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <EntityRelationship Name="business_unit_dkdt_crossdomainmessaging" />
+  <EntityRelationship Name="business_unit_oac_pcftesterentity" />
+  <EntityRelationship Name="cdsify_Account_Account1_Account" />
+  <EntityRelationship Name="lk_dkdt_crossdomainmessaging_createdby" />
+  <EntityRelationship Name="lk_dkdt_crossdomainmessaging_modifiedby" />
+  <EntityRelationship Name="lk_oac_pcftesterentity_createdby" />
+  <EntityRelationship Name="lk_oac_pcftesterentity_modifiedby" />
+  <EntityRelationship Name="msdyn_account_account_BillingAccount" />
+  <EntityRelationship Name="msdyn_bookableresource_account_PreferredResource" />
+  <EntityRelationship Name="msdyn_insightsid_salesaccelerationinsights" />
+  <EntityRelationship Name="msdyn_msdyn_accountkpiitem_account_accountkpiid" />
+  <EntityRelationship Name="msdyn_msdyn_functionallocation_account" />
+  <EntityRelationship Name="msdyn_msdyn_segment_account" />
+  <EntityRelationship Name="msdyn_msdyn_taxcode_account_SalesTaxCode" />
+  <EntityRelationship Name="msdyn_msdyn_workhourtemplate_account_workhourtemplate" />
+  <EntityRelationship Name="msdyn_territory_account_ServiceTerritory" />
+  <EntityRelationship Name="oac_PCFTesterEntity_LookupField_Account" />
+  <EntityRelationship Name="owner_dkdt_crossdomainmessaging" />
+  <EntityRelationship Name="owner_oac_pcftesterentity" />
+  <EntityRelationship Name="team_dkdt_crossdomainmessaging" />
+  <EntityRelationship Name="team_oac_pcftesterentity" />
+  <EntityRelationship Name="user_dkdt_crossdomainmessaging" />
+  <EntityRelationship Name="user_oac_pcftesterentity" />
+</EntityRelationships>

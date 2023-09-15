@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{1476617b-85fb-eb11-94ef-0022489cc1d5}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="oac_name" select="1" preview="1" icon="1">
+        <row name="result" id="oac_pcftesterentityid">
+          <cell name="oac_name" width="150" />
+          <cell name="oac_decimalfield" width="100" />
+          <cell name="oac_integerfield" width="100" />
+          <cell name="oac_optionsetfield" width="100" />
+          <cell name="oac_lookupfield" width="100" />
+          <cell name="oac_dateandtimefield" width="100" />
+          <cell name="oac_textfield" width="100" />
+        </row>
+        <controlDescriptions>
+          <controlDescription>
+            <customControl id="{E7A81278-8635-4d9e-8D4D-59480B391C5B}" formFactor="0">
+              <parameters />
+            </customControl>
+            <customControl id="{E7A81278-8635-4d9e-8D4D-59480B391C5B}" formFactor="1">
+              <parameters />
+            </customControl>
+            <customControl name="oac_propcf.pcfdataset" formFactor="2">
+              <parameters>
+                <data-set name="sampleDataSet">
+                  <ViewId>00000000-0000-0000-0000-000000000000</ViewId>
+                </data-set>
+              </parameters>
+            </customControl>
+          </controlDescription>
+        </controlDescriptions>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" output-format="xml-platform" mapping="logical">
+        <entity name="oac_pcftesterentity">
+          <attribute name="oac_name" />
+          <order attribute="oac_name" descending="false" />
+          <attribute name="oac_textfield" />
+          <attribute name="oac_optionsetfield" />
+          <attribute name="oac_lookupfield" />
+          <attribute name="oac_integerfield" />
+          <attribute name="oac_decimalfield" />
+          <attribute name="oac_dateandtimefield" />
+          <attribute name="oac_pcftesterentityid" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="PCF Tester" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>
