@@ -39,16 +39,7 @@ jobs:
       RUNNER_DEBUG: 1
 
     steps:
-
-    - name: run number with offset
-      shell: pwsh
-      env:
-        NUM: ${{ github.run_number }}
-        ACTIONS_ALLOW_UNSECURE_COMMANDS: true
-      run: |
-        echo ::set-env name=GITHUB_RUN_NUMBER_WITH_OFFSET::$(($NUM+200))
-    - run: echo $GITHUB_RUN_NUMBER_WITH_OFFSET
-
+    
     - run: |
         pac install latest
 
@@ -59,10 +50,7 @@ jobs:
         pac auth select --index 1
 
     - name: update solution version
-      env:
-        build_number: ${{ github.run_number }}
-        offset: 15
       run: >
         pac solution online-version
         -sn ${{ github.event.inputs.solution_name }}
-        -sv 1.0.0.$GITHUB_RUN_NUMBER_WITH_OFFSET
+        -sv 1.0.0.${{ github.run_number }}
