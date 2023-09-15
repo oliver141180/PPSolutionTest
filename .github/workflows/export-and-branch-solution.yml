@@ -51,29 +51,20 @@ jobs:
         client-secret: ${{ secrets.PowerPlatformSPN }}
         tenant-id: ${{env.TENANT_ID}}
 
-    - shell: cmd
-      run: |
+    - run: |
         dotnet tool install --global Microsoft.PowerApps.CLI.Tool
 
-    - shell: cmd
-      run: |
-        pac auth create \
-          --url ${{env.ENVIRONMENT_URL}} \
-          --name ${{ github.event.inputs.solution_name }} \
-          --applicationId ${{env.CLIENT_ID}} \
-          --clientSecret ${{ secrets.PowerPlatformSPN }} \ 
-          --tenant ${{env.TENANT_ID}}
+    - run: |
+        pac auth create --url ${{env.ENVIRONMENT_URL}} --name ${{ github.event.inputs.solution_name }} --applicationId ${{env.CLIENT_ID}} --clientSecret ${{ secrets.PowerPlatformSPN }} --tenant ${{env.TENANT_ID}}
 
-    
-    - shell: cmd
-      run: |
+    - run: |
         pac auth select --index 1
 
-    - shell: cmd
-      run: |
-        pac auth online-version \
-          -sn ${{ github.event.inputs.solution_name }} \
-          -sv 1.0.0.2
+    - name: update solution version
+      run: >
+        pac solution online-version
+        -sn ${{ github.event.inputs.solution_name }}
+        -sv 1.0.0.${{ github.run_number }}
 
     - name: export-solution action
       uses: microsoft/powerplatform-actions/export-solution@v0
@@ -83,29 +74,15 @@ jobs:
         client-secret: ${{ secrets.PowerPlatformSPN }}
         tenant-id: ${{env.TENANT_ID}}
         solution-name: ${{ github.event.inputs.solution_name }}
-        solution-output-file: ${{ github.event.inputs.solution_exported_folder}}/${{ github.event.inputs.solution_name }}.zip
+        solution-output-file: ${{ github.event.inputs.solution_folder}}/${{ github.event.inputs.solution_name }}.zip
 
     - name: unpack-solution action
       uses: microsoft/powerplatform-actions/unpack-solution@v0
       with:
-        solution-file: ${{ github.event.inputs.solution_exported_folder}}/${{ github.event.inputs.solution_name }}.zip
+        solution-file: ${{ github.event.inputs.solution_folder}}/${{ github.event.inputs.solution_name }}.zip
         solution-folder: ${{ github.event.inputs.solution_folder}}/${{ github.event.inputs.solution_name }}
         solution-type: 'Unmanaged'
         overwrite-files: true
-
-    - shell: bash
-      run: |
-        mv ${{ github.event.inputs.solution_exported_folder}}/${{ github.event.inputs.solution_name }}.zip ${{ github.event.inputs.solution_folder}}/${{ github.event.inputs.solution_name }}.zip
-
-    - shell: cmd
-      run: |
-        echo commit all changes
-        git config user.email “aali2@westminster.gov.uk”
-        git config user.name "aali2@westminster.gov.uk"
-        git checkout -B main
-        git add --all
-        git commit -m "code commit"
-        git push --set-upstream origin main
 
     - name: branch-solution, prepare it for a PullRequest
       uses: microsoft/powerplatform-actions/branch-solution@v0
