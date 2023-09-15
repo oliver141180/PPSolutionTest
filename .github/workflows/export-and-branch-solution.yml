@@ -22,7 +22,7 @@ on:
       solution_target_folder: 
        description: 'folder name to be created and checked in *do not change*'
        required: true
-       default: solutions/
+       default: Wcc.Dynamics.Solutions/
 env:
 #edit your values here
   ENVIRONMENT_URL: 'https://oacdev.crm4.dynamics.com'
@@ -78,7 +78,7 @@ jobs:
 
     - name: Commit changes
       run: |
-        cp -r ${{ github.event.inputs.solution_folder}}/${{ github.event.inputs.solution_name }} ./${{ github.event.inputs.solution_target_folder}}/${{ github.event.inputs.solution_name }}
+        
         cp ${{ github.event.inputs.solution_exported_folder}}/${{ github.event.inputs.solution_name }}.zip ./${{ github.event.inputs.solution_target_folder}}/${{ github.event.inputs.solution_name }}.zip
         git config --global user.email "no-reply@github.com"
         git config --global user.name "GitHub Actions"
