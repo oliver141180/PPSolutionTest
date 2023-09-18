@@ -46,9 +46,10 @@ jobs:
       uses: microsoft/powerplatform-actions/actions-install@v1
 
     - name: update solution version
+      shell: pwsh
       run: |
-        pac auth select --index 1
         pac auth create --url ${{env.ENVIRONMENT_URL}} --name ${{ github.event.inputs.solution_name }} --applicationId ${{env.CLIENT_ID}} --clientSecret ${{ secrets.PowerPlatformSPN }} --tenant ${{env.TENANT_ID}}
+        pac auth select --index 1
         pac solution online-version -sn ${{ github.event.inputs.solution_name }} -sv 1.0.0.${{ github.run_number }}
 
     - name: export-solution action
