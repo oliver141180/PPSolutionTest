@@ -54,7 +54,7 @@ jobs:
         pac auth select --index 1
         pac solution online-version -sn ${{ github.event.inputs.solution_name }} -sv 1.0.0.${{ github.run_number }}
 
-    - name: export-solution action
+    - name: export-solution (as unmanaged) action
       uses: microsoft/powerplatform-actions/export-solution@v1
       with:
         environment-url: ${{env.ENVIRONMENT_URL}}
@@ -65,20 +65,37 @@ jobs:
         solution-output-file: ${{ github.event.inputs.solution_folder}}/${{ github.event.inputs.solution_name }}_unmanaged.zip
         managed: false
 
+    - name: export-solution (as managed) action
+      uses: microsoft/powerplatform-actions/export-solution@v1
+      with:
+        environment-url: ${{env.ENVIRONMENT_URL}}
+        app-id: ${{env.CLIENT_ID}}
+        client-secret: ${{ secrets.PowerPlatformSPN }}
+        tenant-id: ${{env.TENANT_ID}}
+        solution-name: ${{ github.event.inputs.solution_name }}
+        solution-output-file: ${{ github.event.inputs.solution_folder}}/${{ github.event.inputs.solution_name }}_unmanaged.zip
+        managed: true
+
     - name: unpack-solution action
       uses: microsoft/powerplatform-actions/unpack-solution@v1
       with:
-        solution-file: ${{ github.event.inputs.solution_folder}}/${{ github.event.inputs.solution_name }}_unmanaged.zip
+        solution-file: ${{ github.event.inputs.solution_folder}}/${{ github.event.inputs.solution_name }}_managed.zip
         solution-folder: ${{ github.event.inputs.solution_folder}}/${{ github.event.inputs.solution_name }}
         solution-type: 'Unmanaged'
         overwrite-files: true
+
+    - name: Get current date/time
+      id: getCurrentDateTime
+      uses: Kaven-Universe/github-action-current-date-time@v1
+      with:
+        format: "YYYY_MM_DD HH_mm_ss_SSS"
 
     - name: Git Fetch and Commit 
       run: |
         git fetch --all  
         git config --global user.email "no-reply@github.com"
         git config --global user.name "GitHub Actions"
-        git checkout main
+        git git checkout -b ${{ github.event.inputs.solution_name }}-${{ steps.getCurrentDateTime.outputs }} main
         git add --all 
         git commit -m "Updates from the dev environment"
         git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
