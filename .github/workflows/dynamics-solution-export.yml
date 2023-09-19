@@ -11,18 +11,11 @@ on:
         required: true
         default: GitHubDeploymentTest
        #Do Not change these values
-      solution_exported_folder:
-        description: 'folder name for staging the exported solution *do not change*'
-        required: true
-        default: out/exported/
       solution_folder:
         description: 'staging the unpacked solution folder before check-in *do not change*'
         required: true
-        default: out/solutions/
-      solution_target_folder: 
-       description: 'folder name to be created and checked in *do not change*'
-       required: true
-       default: solutions/
+        default: WCC.Dynamics.Solutions/
+
 env:
 #edit your values here
   ENVIRONMENT_URL: 'https://oacdev.crm4.dynamics.com'
@@ -95,7 +88,7 @@ jobs:
         git fetch --all  
         git config --global user.email "no-reply@github.com"
         git config --global user.name "GitHub Actions"
-        git git checkout -b ${{ github.event.inputs.solution_name }}-${{ steps.getCurrentDateTime.outputs }} main
+        git checkout main
         git add --all 
         git commit -m "Updates from the dev environment"
         git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
