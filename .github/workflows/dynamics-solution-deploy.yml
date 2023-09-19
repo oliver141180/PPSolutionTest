@@ -8,10 +8,13 @@ on:
         description: 'Name of the solution to include in the release'
         required: true
         default: GitHubDeploymentTest
-      activate_plugins:
-        description: 'Should the release auto-active any plugins or workflow steps contained in the solution'
-        required: false
-        default: true
+      solution:
+        type: choice
+        description: The solution to deploy
+        required: true
+        options:
+        - GitHubDeploymentTest
+        - Example2ndSolution
 
 env:
 #edit your values here
@@ -54,3 +57,4 @@ jobs:
         solution-file: ${{env.ROOT_DIR}}/${{ github.event.inputs.solution_name }}_managed.zip
         force-overwrite: true
         publish-changes: true
+        run-asynchronously: true
