@@ -35,7 +35,11 @@ jobs:
       with:
         lfs: true
 
-    
+    - name: Get Current Date
+      id: currentDate
+      uses: Kaven-Universe/github-action-current-date-time@v1
+      with:
+        format: "YYYY_MM_DD HH_mm_ss_SSS"
 
     #TODO - can't currently see how to avoid re-installing CLI tools
     - name: Update Solution Version
@@ -44,9 +48,9 @@ jobs:
         dotnet tool install --global Microsoft.PowerApps.CLI.Tool
         pac auth create --url ${{env.ENVIRONMENT_URL}} --name ${{ github.event.inputs.solution_name }} --applicationId ${{env.CLIENT_ID}} --clientSecret ${{ secrets.PowerPlatformSPN }} --tenant ${{env.TENANT_ID}}
         pac auth select --index 1
-        pac solution online-version -sn ${{ github.event.inputs.solution_name }} -sv 1.0.${{ github.run_id }}.${{ github.run_number }}
+        pac solution online-version -sn ${{ github.event.inputs.solution_name }} -sv 1.0.${{ steps.currentDate.outputs.year }}${{ steps.currentDate.outputs.month }}${{ steps.currentDate.outputs.day }}.${{ github.run_number }}
 
-    - name: Update Solution Version
+    - name: Publish Solution
       shell: pwsh
       run: |
         pac solution publish
