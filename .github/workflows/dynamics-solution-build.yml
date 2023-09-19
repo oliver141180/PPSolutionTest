@@ -5,22 +5,20 @@ name: Dynamics Solution - Build.yml
 on:
   workflow_dispatch:
     inputs:
-      # Change this value
       solution_name:
-        description: 'Name of the solution to check into source control'
+        type: choice
+        description: The solution to deploy
         required: true
-        default: GitHubDeploymentTest
-       #Do Not change these values
-      solution_folder:
-        description: 'Root folder in repo for storage of solution files'
-        required: true
-        default: WCC.Dynamics.Solutions/
+        options:
+        - GitHubDeploymentTest
+        - Example2ndSolution
 
 env:
 #edit your values here
   ENVIRONMENT_URL: 'https://oacdev.crm4.dynamics.com'
   CLIENT_ID: '2b7c51cb-bc68-431c-91f9-23aeaa87f33e'
   TENANT_ID: 'a4cde2db-601c-4294-892c-9b9999462096'
+  ROOT_DIR: 'WCC.Dynamics.Solutions'
 permissions:
   contents: write
 jobs:
@@ -74,7 +72,7 @@ jobs:
         client-secret: ${{ secrets.PowerPlatformSPN }}
         tenant-id: ${{env.TENANT_ID}}
         solution-name: ${{ github.event.inputs.solution_name }}
-        solution-output-file: ${{ github.event.inputs.solution_folder}}/${{ github.event.inputs.solution_name }}_unmanaged.zip
+        solution-output-file: ${{env.ROOT_DIR}}/${{ github.event.inputs.solution_name }}_unmanaged.zip
         managed: false
 
     - name: Export Solution As Managed
@@ -85,14 +83,14 @@ jobs:
         client-secret: ${{ secrets.PowerPlatformSPN }}
         tenant-id: ${{env.TENANT_ID}}
         solution-name: ${{ github.event.inputs.solution_name }}
-        solution-output-file: ${{ github.event.inputs.solution_folder}}/${{ github.event.inputs.solution_name }}_managed.zip
+        solution-output-file: ${{env.ROOT_DIR}}/${{ github.event.inputs.solution_name }}_managed.zip
         managed: true
 
     - name: Unpack Unmanaged Solution
       uses: microsoft/powerplatform-actions/unpack-solution@v1
       with:
-        solution-file: ${{ github.event.inputs.solution_folder}}/${{ github.event.inputs.solution_name }}_unmanaged.zip
-        solution-folder: ${{ github.event.inputs.solution_folder}}/${{ github.event.inputs.solution_name }}
+        solution-file: ${{env.ROOT_DIR}}/${{ github.event.inputs.solution_name }}_unmanaged.zip
+        solution-folder: ${{env.ROOT_DIR}}/${{ github.event.inputs.solution_name }}
         solution-type: 'Unmanaged'
         overwrite-files: true
 
