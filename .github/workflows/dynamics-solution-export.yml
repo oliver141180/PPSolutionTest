@@ -35,19 +35,23 @@ jobs:
       with:
         lfs: true
 
-    - name: Install Power Platform Tools
-      uses: microsoft/powerplatform-actions/actions-install@v1
+    
 
     #TODO - can't currently see how to avoid re-installing CLI tools
-    - name: update solution version
+    - name: Update Solution Version
       shell: pwsh
       run: |
         dotnet tool install --global Microsoft.PowerApps.CLI.Tool
         pac auth create --url ${{env.ENVIRONMENT_URL}} --name ${{ github.event.inputs.solution_name }} --applicationId ${{env.CLIENT_ID}} --clientSecret ${{ secrets.PowerPlatformSPN }} --tenant ${{env.TENANT_ID}}
         pac auth select --index 1
-        pac solution online-version -sn ${{ github.event.inputs.solution_name }} -sv 1.0.0.${{ github.run_number }}
+        pac solution online-version -sn ${{ github.event.inputs.solution_name }} -sv 1.0.${{ github.run_id }}.${{ github.run_number }}
 
-    - name: export-solution (as unmanaged) action
+    - name: Update Solution Version
+      shell: pwsh
+      run: |
+        pac solution publish
+        
+    - name: Export Solution As Unmanaged
       uses: microsoft/powerplatform-actions/export-solution@v1
       with:
         environment-url: ${{env.ENVIRONMENT_URL}}
@@ -58,7 +62,7 @@ jobs:
         solution-output-file: ${{ github.event.inputs.solution_folder}}/${{ github.event.inputs.solution_name }}_unmanaged.zip
         managed: false
 
-    - name: export-solution (as managed) action
+    - name: Export Solution As Managed
       uses: microsoft/powerplatform-actions/export-solution@v1
       with:
         environment-url: ${{env.ENVIRONMENT_URL}}
@@ -69,7 +73,7 @@ jobs:
         solution-output-file: ${{ github.event.inputs.solution_folder}}/${{ github.event.inputs.solution_name }}_managed.zip
         managed: true
 
-    - name: unpack-solution action
+    - name: Unpack Unmanaged Solution
       uses: microsoft/powerplatform-actions/unpack-solution@v1
       with:
         solution-file: ${{ github.event.inputs.solution_folder}}/${{ github.event.inputs.solution_name }}_unmanaged.zip
@@ -77,13 +81,7 @@ jobs:
         solution-type: 'Unmanaged'
         overwrite-files: true
 
-    - name: Get current date/time
-      id: getCurrentDateTime
-      uses: Kaven-Universe/github-action-current-date-time@v1
-      with:
-        format: "YYYY_MM_DD HH_mm_ss_SSS"
-
-    - name: Git Fetch and Commit 
+    - name: Commit Changes to Repo 
       run: |
         git fetch --all  
         git config --global user.email "no-reply@github.com"
