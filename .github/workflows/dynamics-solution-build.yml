@@ -1,4 +1,4 @@
-name: dynamics-check-in-solution.yml 
+name: Dynamics Solution - Build.yml 
 # Export solution from DEV environment
 #  unpack it and prepare, commit and push changes to main
 
