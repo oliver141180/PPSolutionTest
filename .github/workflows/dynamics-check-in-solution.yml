@@ -1,18 +1,18 @@
-name: dynamics-solution-export.yml 
+name: dynamics-check-in-solution.yml 
 # Export solution from DEV environment
-#  unpack it and prepare, commit and push a git branch with the changes
+#  unpack it and prepare, commit and push changes to main
 
 on:
   workflow_dispatch:
     inputs:
       # Change this value
       solution_name:
-        description: 'name of the solution to worked on from Power Platform'
+        description: 'Name of the solution to check into source control'
         required: true
         default: GitHubDeploymentTest
        #Do Not change these values
       solution_folder:
-        description: 'staging the unpacked solution folder before check-in *do not change*'
+        description: 'Root folder in repo for storage of solution files'
         required: true
         default: WCC.Dynamics.Solutions/
 
