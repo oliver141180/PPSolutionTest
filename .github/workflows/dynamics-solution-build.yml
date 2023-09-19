@@ -35,6 +35,9 @@ jobs:
       with:
         lfs: true
 
+    - name: Install Power Platform Tools
+      uses: microsoft/powerplatform-actions/actions-install@v1
+
     - name: Who Am I Connection Test
       uses: microsoft/powerplatform-actions/who-am-i@v1
       with:
