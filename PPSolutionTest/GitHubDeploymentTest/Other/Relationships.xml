@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<EntityRelationships xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <EntityRelationship Name="business_unit_oac_githubtestrecord" />
-  <EntityRelationship Name="lk_oac_githubtestrecord_createdby" />
-  <EntityRelationship Name="lk_oac_githubtestrecord_modifiedby" />
-  <EntityRelationship Name="owner_oac_githubtestrecord" />
-  <EntityRelationship Name="team_oac_githubtestrecord" />
-  <EntityRelationship Name="user_oac_githubtestrecord" />
-</EntityRelationships>
