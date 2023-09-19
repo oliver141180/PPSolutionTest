@@ -5,10 +5,6 @@ on:
   workflow_dispatch:
     inputs:
       solution_name:
-        description: 'Name of the solution to include in the release'
-        required: true
-        default: GitHubDeploymentTest
-      solution:
         type: choice
         description: The solution to deploy
         required: true
@@ -25,7 +21,7 @@ env:
 permissions:
   contents: write
 jobs:
-  export-from-dev:
+  deploy-from-repo:
     runs-on: windows-latest
     # or you can say runs-on: ubuntu-latest
     env:
